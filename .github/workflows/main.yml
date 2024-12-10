@@ -1,0 +1,14 @@
+name: Prueba Python
+
+on: push
+
+jobs:
+  test-python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+      - name: Instalar pytest
+        run: pip install pytest
+      - name: Ejecutar pruebas
+        run: pytest test.py
