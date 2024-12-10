@@ -1,0 +1,17 @@
+name: Ejer3
+
+on: pull_request
+
+jobs:
+  ej32:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+
+    steps:
+      - name: Bajar código
+        uses: actions/checkout@v4
+      - name: Analizar calidad
+        uses: advanced-security/python-lint-code-scanning-action@v1
+        with:
+          linter: pylint
